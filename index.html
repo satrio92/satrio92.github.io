@@ -21,6 +21,7 @@
                 <li><a href="#achievment" onclick="toogleMenu();">Achievment</a></li>
                 <li><a href="#contact" onclick="toogleMenu();">Contact</a></li>
             </ul>
+            <div class="themeSwitch"></div>
         </div>
         <div class="main">
             <div class="topbar">
@@ -291,11 +292,17 @@
         let topbar = document.querySelector('.topbar')
         let main = document.querySelector('.main');
         let nav = document.querySelector('.nav');
+        let themeSwitch = document.querySelector('.themeSwitch');
+        let body = document.querySelector('body');
         toggle.onclick = function() {
             toggle.classList.toggle('active');
             topbar.classList.toggle('active');
             main.classList.toggle('active');
             nav.classList.toggle('active');
+        }
+
+        themeSwitch.onclick = function() {
+            body.classList.toggle('dark');
         }
 
         function toggleMenu() {
@@ -330,6 +337,7 @@
                     console.log('Success!', response)
                 })
                 .catch(error => console.error('Error!', error.message))
+            myAlert.classList.toggle('active')
         })
     </script>
 </body>

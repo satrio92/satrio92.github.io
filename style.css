@@ -14,6 +14,13 @@
     --white2: #fff;
 }
 
+.dark {
+    --black: #fff;
+    --black2: #444;
+    --white: #333;
+    --white2: #444;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -34,6 +41,10 @@ body {
     align-items: center;
     overflow: hidden;
     transition: width 0.5s, left 0.5s;
+}
+
+.dark .nav {
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .nav.active {
@@ -100,6 +111,10 @@ body {
     align-items: center;
     z-index: 1000;
     transition: width 0.5s, left 0.5s;
+}
+
+.dark .main .topbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .topbar.active {
@@ -177,6 +192,10 @@ P {
     margin-bottom: 20px;
 }
 
+.dark p {
+    color: var(--black);
+}
+
 .btn {
     position: relative;
     display: inline-block;
@@ -187,6 +206,10 @@ P {
     font-weight: 400;
     margin-top: 10px;
     text-decoration: none;
+}
+
+.dark .btn:hover {
+    background: #2196f3;
 }
 
 .socialMedia {
@@ -215,6 +238,10 @@ P {
 .socialMedia li a:hover {
     background: var(--black2);
     color: #fff;
+}
+
+.dark .socialMedia li a:hover {
+    background: #2196f3;
 }
 
 .adjust {
@@ -292,8 +319,16 @@ P {
     flex-direction: column;
 }
 
+.dark .skills .content .skillBox:hover {
+    background: #2196f3;
+}
+
 .skills .content .skillBox img {
     max-width: 50px;
+}
+
+.dark .skills .content .skillBox img {
+    filter: invert(1);
 }
 
 .skills .content .skillBox h2 {
@@ -359,6 +394,10 @@ P {
     align-items: center;
     transform: translateY(100%);
     transition: 0.5s ease-in-out;
+}
+
+.dark .project .content .workBox .textBox {
+    background: #444;
 }
 
 .project .content .workBox:hover .textBox,
@@ -459,6 +498,10 @@ P {
     border: none;
 }
 
+.dark .contact .contactForm .row2 .btn:hover {
+    background: #2196f3;
+}
+
 .contact .contactForm .row2 .btn-kirim.active {
     display: none;
 }
@@ -469,6 +512,10 @@ P {
 
 .contact .contactForm .row2 .btn-load.active {
     display: block;
+}
+
+.dark .contact .contactForm .row2 .btn-load.active {
+    background: #2196f3;
 }
 
 .btn-load i {
@@ -482,7 +529,51 @@ P {
     text-align: center;
 }
 
+.themeSwitch {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themeSwitch::before {
+    content: '\f186';
+    font-family: fontAwesome;
+}
+
+.dark .themeSwitch::before {
+    content: '\f185';
+    font-family: fontAwesome;
+}
+
+.themeSwitch::after {
+    content: 'Switch To Dark Mode';
+    position: absolute;
+    left: 40px;
+    font-size: 0.7em;
+    color: var(--black);
+    white-space: nowrap;
+    font-weight: 300;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+.dark .themeSwitch::after {
+    content: 'Switch To Light Mode';
+}
+
 @media (max-width: 992px) {
+    .themeSwitch {
+        left: 20px;
+    }
     .nav {
         left: -100%;
     }
