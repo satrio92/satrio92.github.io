@@ -174,7 +174,7 @@
                     </div>
                 </div>
             </section>
-            <section class="achievment adjust" id="achievment">
+            <section class="project adjust" id="achievment">
                 <div class="title">
                     <h2>Achievment</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit alias beatae.</p>
@@ -257,23 +257,27 @@
             <section class="contact adjust" id="contact">
                 <div class="title">
                     <h2>Contact</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit alias beatae.</p>
                 </div>
                 <div class="contactForm">
-                    <div class="row">
-                        <input type="text" name="" placeholder="First Name">
-                        <input type="text" name="" placeholder="Last Name">
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <b>Terima kasih!</b> Pesan anda telah terkirim
                     </div>
-                    <div class="row">
-                        <input type="text" name="" placeholder="Email Address">
-                        <input type="text" name="" placeholder="Phone No.">
-                    </div>
-                    <div class="row2">
-                        <textarea name="" placeholder="Message"></textarea>
-                    </div>
-                    <div class="row2">
-                        <input type="submit" value="Send">
-                    </div>
+                    <form name="portfolio-contact-form">
+                        <div class="row">
+                            <input type="text" name="nama" placeholder="Nama Lengkap">
+                            <input type="text" name="email" placeholder="Email">
+                        </div>
+                        <div class="row2">
+                            <textarea name="pesan" placeholder="Pesan"></textarea>
+                        </div>
+                        <div class="row2">
+                            <button type="submit" class="btn btn-kirim">Kirim</button>
+                            <button type="button" class="btn btn-load">
+                                <i class="fa fa-circle-o-notch fa-spin"></i>Loading
+                              </button>
+                        </div>
+                    </form>
                 </div>
             </section>
             <div class="copyright">
@@ -300,6 +304,33 @@
             main.classList.remove('active');
             nav.classList.remove('active')
         }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx_7LRhLdf3Esg__22sHN0BKuG5iFACItEGfwwWAQpM777_mR6EdH7eGTm2fU-3pCIs/exec'
+        const form = document.forms['portfolio-contact-form'];
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoad = document.querySelector('.btn-load');
+        const myAlert = document.querySelector('.alert');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            btnKirim.classList.toggle('active');
+            btnLoad.classList.toggle('active');
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    btnKirim.classList.toggle('active');
+                    btnLoad.classList.toggle('active');
+                    myAlert.classList.toggle('active')
+                    form.reset();
+                    console.log('Success!', response)
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 </body>
 

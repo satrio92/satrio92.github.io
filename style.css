@@ -386,6 +386,33 @@ P {
     margin-top: 20px;
 }
 
+.alert {
+    padding: 20px;
+    background-color: #0ddc8c;
+    color: white;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.alert.active {
+    display: block;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
 .contact .contactForm .row {
     width: 100%;
     display: grid;
@@ -419,10 +446,10 @@ P {
     height: 200px;
 }
 
-.contact .contactForm .row2 input[type="submit"] {
+.contact .contactForm .row2 .btn {
     background: var(--black2);
     color: #fff;
-    padding: 10px 30px;
+    padding: 10px 25px;
     display: inline-block;
     font-weight: 500;
     letter-spacing: 2px;
@@ -430,6 +457,22 @@ P {
     text-transform: uppercase;
     max-width: 150px;
     border: none;
+}
+
+.contact .contactForm .row2 .btn-kirim.active {
+    display: none;
+}
+
+.contact .contactForm .row2 .btn-load {
+    display: none;
+}
+
+.contact .contactForm .row2 .btn-load.active {
+    display: block;
+}
+
+.btn-load i {
+    margin-right: 8px;
 }
 
 .copyright {
