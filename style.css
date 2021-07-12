@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -107,6 +106,7 @@ body {
     width: calc(100% - 0px);
     left: 0;
 }
+
 .main .topbar .logo {
     color: var(--black);
     font-weight: 700;
@@ -262,6 +262,11 @@ P {
     min-width: 49%;
 }
 
+.about .content .textBox p {
+    text-align: justify;
+    text-indent: 0.5in;
+}
+
 .about .content .imgBox {
     margin-left: 40px;
 }
@@ -272,7 +277,7 @@ P {
 
 .skills .content {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     margin: 40px 0;
 }
@@ -304,7 +309,7 @@ P {
 .project .content,
 .achievment .content {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     margin: 40px 0;
 }
@@ -317,7 +322,7 @@ P {
     overflow: hidden;
 }
 
-.project .content .workBox .imgBox, 
+.project .content .workBox .imgBox,
 .achievment .content .workBox .imgBox {
     position: relative;
     width: 100%;
@@ -331,7 +336,7 @@ P {
     transform: translateY(-100%);
 }
 
-.project .content .workBox .imgBox img, 
+.project .content .workBox .imgBox img,
 .achievment .testimonials .workBox .imgBox img {
     position: absolute;
     top: 0;
@@ -341,7 +346,7 @@ P {
     object-fit: cover;
 }
 
-.project .content .workBox .textBox, 
+.project .content .workBox .textBox,
 .achievment .content .workBox .textBox {
     position: absolute;
     top: 0;
@@ -355,12 +360,13 @@ P {
     transform: translateY(100%);
     transition: 0.5s ease-in-out;
 }
-.project .content .workBox:hover .textBox, 
+
+.project .content .workBox:hover .textBox,
 .achievment .content .workBox:hover .textBox {
     transform: translateY(0);
 }
 
-.project .content .workBox .textBox h3, 
+.project .content .workBox .textBox h3,
 .achievment .content .workBox .textBox h3 {
     color: #fff;
     font-size: 1em;
@@ -383,7 +389,7 @@ P {
 .contact .contactForm .row {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     margin-top: 20px;
 }
@@ -400,9 +406,9 @@ P {
 .contact .contactForm .row2 textarea {
     width: 100%;
     padding: 10px;
-    border:  none;
+    border: none;
     outline: none;
-    color:  var(--black);
+    color: var(--black);
     background: var(--white2);
     font-size: 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -437,92 +443,74 @@ P {
     .nav {
         left: -100%;
     }
-
     .nav.active {
         left: 0;
         width: 100%;
     }
-
-    .main, .main .topbar {
+    .main,
+    .main .topbar {
         width: 100%;
         left: 0;
     }
-
     .main.active {
         left: 100%;
     }
-
     .main .topbar {
         padding: 0 20px;
     }
-
     .nav ul {
         padding: 20px 20px;
     }
-
     .banner .imgBox {
         width: 250px;
         height: 250px;
     }
-
-    .banner h3, .banner p {
+    .banner h3,
+    .banner p {
         text-align: center;
     }
-
     .adjust {
         padding: 0 20px;
         padding-top: 80px;
     }
-
     .about .content {
         flex-direction: column;
     }
-
     .about .content .textBox {
         width: 100%;
         min-width: 100%;
     }
-
     .about .content .imgBox {
         margin-left: 0;
         margin-top: 20px;
     }
-
     .skills .content {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
     .project .content {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
     .achievment .content {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 @media (max-width: 767px) {
     .skills .content {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-
     .project .content {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-
     .achievment .content {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-
     .contact .contactForm .row {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-
     .contact {
         margin-bottom: 100px;
     }
-
     .copyright {
         padding: 10px 20px;
     }
